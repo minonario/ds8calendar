@@ -1,0 +1,223 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep 16, 2022, 9:51:16 PM
+    Author     : josemorales
+*/
+
+
+#fdcalendarsx table.month {
+    background-color: transparent;
+    margin: 0 auto;
+    width: inherit;
+    font-family: 'Ubuntu', verdana, arial, sans-serif;
+}
+#fdcalendarsx table.month tbody, 
+#fdcalendarsx table.month tfoot, 
+#fdcalendarsx table.month thead {
+    border: none;
+}
+div.calyr h1,div.calyr h2,div.calmon h1,div.calmon h2 {
+    text-transform: none;
+}
+div.calyr {
+    float: left;
+    text-align: center;
+    font-size: 3vw;
+}
+div.calyr h1.title,div.calmon h1.title {
+    font-size: 6vw;
+    margin: 8vw 0 1vw 0;
+}
+div.calyr h1.subtitle,div.calmon h1.subtitle {
+    font-size: 5.5vw;
+    margin: 1vw 0 1vw 0;
+}
+div.calyr h2,div.calmon h2 {
+    font-size: 4.0vw;
+}
+div.calyr a {
+    text-decoration: none;
+    color: #14688b;
+    font-weight: normal;
+    font-size: 3.7vw;
+}
+div.calmain {
+    float: left;
+    margin: 6vw 0 6vw 0;
+}
+#fdcalendarsx table.month th {
+    text-align: center;
+    /*padding-bottom: 5px;*/
+    padding: 0 0 5px 0;
+}
+#fdcalendarsx table.month td {
+    color: #666666;
+    padding: 0.2vw 0.4vw 0.2vw 0.4vw;
+    white-space: nowrap;
+}
+#fdcalendarsx table.month td {
+    text-align: right;
+}
+#fdcalendarsx div.calyr td.wno {
+    font-style: italic;
+    font-weight: normal;
+    color: #b3b3b3;
+    font-size: 2.5vw;
+    padding-right: 1vw;
+}
+#fdcalendarsx table.month td.redday {
+    color: #d42b2b;
+}
+#fdcalendarsx table.month td.boldd {
+    color: #353664;
+    font-weight: bold;
+}
+#fdcalendarsx table.month td.bluday {
+    color: #353664;
+}
+div.calyrmo {
+    float: left;
+    /*display: flex;*/
+    flex-wrap: wrap;
+    text-align: right;
+    width: 50%;
+    margin-top: 2vw;
+    padding-left: 5vw;
+}
+div.calyrmo:nth-of-type(even) {
+    padding-left: 0;
+    padding-right: 5vw;
+}
+div.calyr table.month {
+    margin-left: auto;
+    margin-right: auto;
+}
+div.calmon {
+    float: left;
+    text-align: center;
+    font-size: 3vw;
+}
+div.calmon p {
+    font-size: 3vw;
+    padding: 0;
+    margin: 0;
+}
+div.calmon {
+    width: 100%;
+}
+table.calmon {
+    float: left;
+    width: 90%;
+     margin-left: 5%;
+    margin-top: 5vw;
+    margin-bottom: 8vw;
+}
+table.calmon td {
+    border: 1px solid #a0a0a0;
+    padding: 2px;
+}
+table.calmon td.wkno {
+    width: 10%;
+    padding: 2px 10px 2px 10px;
+    font-weight: bold;
+}
+table.calmon td.dayno {
+    width: 10%;
+    text-align: right;
+    padding: 2px 10px 2px 10px;
+}
+table.calmon td.wday {
+    width: 20%;
+    text-align: left;
+    padding: 2px 10px 2px 10px;
+}
+table.calmon td.descr {
+    text-align: left;
+    padding: 2px 10px 2px 10px;
+    font-style: italic;
+}
+div.calmon td.redday {
+    color: #d42b2b;
+}
+div.calmon td.bluday {
+    color: #14688b;
+}
+div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.descr {
+    background: #f0f0f0;
+}
+@media (min-width: 590px) {
+    div.calyrmo,div.calyrmo:nth-of-type(even) {
+        width: 33.2%;
+        padding: 0;
+    }
+    div.calyrmo:nth-of-type(3n) {
+        /*padding-right: 4vw;*/
+    }
+    div.calyrmo:nth-of-type(3n+1) {
+        /*padding-left: 4vw;*/
+    }
+    div.calyr {
+        font-size: 1.8vw;
+    }
+    div.calyr a {
+        font-size: 2.2vw;
+    }
+    table.month td {
+        padding: 1px 2px 2px 2px;
+        padding: 0.1vw 0.2vw 0.1vw 0.2vw;
+    }
+    #fdcalendarsx div.calyr td.wno {
+        font-size: 1.5vw;
+    }
+}
+@media (min-width: 926px) {
+    div.calmain {
+        float: left;
+        margin: 70px 0 70px 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #fdcalendarsx div.calyr {
+        font-size: 16px;
+    }
+    div.calyr a {
+        font-size: 20px;
+    }
+    #fdcalendarsx table.month td {
+        padding: 2px 3px 3px 3px;
+    }
+    #fdcalendarsx div.calyr td.wno {
+        font-size: 12px;
+    }
+    div.calyr h1.title,div.calmon h1.title {
+        font-size: 50px;
+        margin: 70px 0 0 0;
+    }
+    div.calyr h1.subtitle,div.calmon h1.subtitle {
+        font-size: 40px;
+        margin: 10px 0 0 0;
+    }
+    div.calyr h2,div.calmon h2 {
+        font-size: 30px;
+        margin: 10px 0 0 0;
+    }
+    div.calyrmo {
+        margin-top: 10px;
+        padding: 0;
+    }
+    div.calyrmo:nth-of-type(3n+1) {
+        /*padding-left: 60px;*/
+    }
+     div.calyrmo:nth-of-type(3n) {
+        /*padding-right: 60px;*/
+    }
+    table.calmon {
+        width: 810px;
+        margin-left: 50px;
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+}

@@ -1,0 +1,171 @@
+<?php
+
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+if (!class_exists('DS8Calendar_App')) :
+
+    /**
+     * Main DS8Calendar_App Class
+     *
+     * @class DS8Calendar_App
+     * @version	1.0
+     */
+    final class DS8Calendar_App {
+    
+        /**
+	 * @var string
+	 */
+	public $version = '1.0';
+        
+        /**
+         * @var DS8Calendar The single instance of the class
+         */
+        protected static $_instance = null;
+
+        /**
+	 * @var DS8_Query $query
+	 */
+	public $query = null;
+        
+        /**
+         * Main DS8Calendar Instance
+         *
+         * Ensures only one instance of DS8Calendar is loaded or can be loaded.
+         *
+         * @static
+         * @see DS8()
+         * @return DS8Calendar - Main instance
+         */
+        public static function instance() {
+            if (is_null(self::$_instance)) {
+                self::$_instance = new self();
+            }
+            return self::$_instance;
+        }
+
+        /**
+         * DS8Calendar Constructor.
+         */
+        public function __construct() {
+            $this->includes();
+            $this->init_hooks();
+        }
+
+        /**
+         * Hook into actions and filters
+         */
+        private function init_hooks() {
+            register_activation_hook( __FILE__, array( 'DS8_Install', 'install' ) );
+            add_action( 'after_setup_theme', array( $this, 'setup_environment' ) );
+            add_action( 'init', array( $this, 'init' ), 0 );
+        }
+        
+        /**
+         * Include required core files used in admin and on the frontend.
+         */
+        public function includes() {
+                
+            if ( $this->is_request('frontend') ) {
+                //$this->frontend_includes();
+            }
+            
+            include_once( 'includes/class-ds8-post-types.php' );                     // Registers post types
+        }
+
+        /**
+         * Include required frontend files.
+         */
+        public function frontend_includes() {
+            include_once( 'includes/class-ds8-template-loader.php' );                // Template Loader
+        }
+
+        /**
+         * Function used to Init DS8Calendar Template Functions - This makes them pluggable by plugins and themes.
+         */
+        public function include_template_functions() {
+            include_once( 'includes/ds8-template-functions.php' );
+        }
+        
+        /**
+	 * Init DS8Calendar when WordPress Initialises.
+	 */
+	public function init() {
+		// Set up localisation
+		//$this->load_plugin_textdomain();
+	}
+        
+        /**
+	 * Load Localisation files.
+	 *
+	 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
+	 *
+	 * Admin Locales are found in:
+	 * 		- WP_LANG_DIR/schlage/ds8calendar-admin-LOCALE.mo
+	 * 		- WP_LANG_DIR/plugins/ds8calendar-admin-LOCALE.mo
+	 *
+	 * Frontend/global Locales found in:
+	 * 		- WP_LANG_DIR/ds8calendar/ds8calendar-LOCALE.mo
+	 * 	 	- ds8calendar/i18n/languages/ds8calendar-LOCALE.mo (which if not found falls back to:)
+	 * 	 	- WP_LANG_DIR/plugins/ds8calendar-LOCALE.mo
+	 */
+	public function load_plugin_textdomain() {
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'ds8calendar' );
+
+		if ( $this->is_request( 'admin' ) ) {
+			load_textdomain( 'ds8calendar', WP_LANG_DIR . '/ds8calendar/ds8calendar-admin-' . $locale . '.mo' );
+			load_textdomain( 'ds8calendar', WP_LANG_DIR . '/plugins/ds8calendar-admin-' . $locale . '.mo' );
+		}
+
+		load_textdomain( 'ds8calendar', WP_LANG_DIR . '/ds8calendar/ds8calendar-' . $locale . '.mo' );
+		load_plugin_textdomain( 'ds8calendar', false, plugin_basename( dirname( __FILE__ ) ) . "/i18n/languages" );
+	}
+        
+        /**
+	 * Ensure theme and server variable compatibility and setup image sizes.
+	 */
+	public function setup_environment() {
+		$this->define( 'DS8_TEMPLATE_PATH', $this->template_path() );
+	}
+
+        /**
+         * Get the plugin url.
+         * @return string
+         */
+        public function plugin_url() {
+            return untrailingslashit(plugins_url('/', __FILE__));
+        }
+
+        /**
+         * Get the plugin path.
+         * @return string
+         */
+        public function plugin_path() {
+            return untrailingslashit(plugin_dir_path(__FILE__));
+        }
+
+        /**
+         * Get the template path.
+         * @return string
+         */
+        public function template_path() {
+            return apply_filters('ds8calendar_template_path', 'ds8calendar/');
+        }
+
+    }
+
+    endif;
+
+/**
+ * Returns the main instance of DS8 to prevent the need to use globals.
+ *
+ * @return DS8Calendar_App
+ */
+function DS8() {
+    return DS8Calendar_App::instance();
+}
+
+// Global for backwards compatibility.
+$GLOBALS['ds8calendar'] = DS8();

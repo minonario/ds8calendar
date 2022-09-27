@@ -1,0 +1,76 @@
+.custom-fd-dates {
+  width: 100%
+}
+.custom-fd-dates .rowid {
+background: #f4f4f4;
+color: #aaa;
+text-shadow: #fff 0 1px 0;
+}
+
+.ds8-icon {
+display: inline-block;
+height: 26px;
+width: 26px;
+border: transparent solid 1px;
+border-radius: 100%;
+font-size: 16px;
+line-height: 26px;
+text-align: center;
+text-decoration: none;
+vertical-align: top;
+}
+
+.custom-fd-dates > tbody > tr > th, .custom-fd-dates > thead > tr > th, .custom-fd-dates > tbody > tr > td, .custom-fd-dates > thead > tr > td {
+padding: 8px;
+vertical-align: top;
+background: #fff;
+text-align: left;
+border-style: solid;
+font-weight: normal;
+border-width: 1px;
+border-color: #ddd;
+}
+
+.custom-fd-dates .ds8-row:hover > .ds8-row-handle .ds8-icon, .custom-fd-dates .ds8-row.-hover > .ds8-row-handle .ds8-icon {
+display: block;
+}
+
+.custom-fd-dates .ds8-row-handle .ds8-icon {
+display: none;
+position: absolute;
+/* top: 0; */
+margin: -8px 0 0 -2px;
+}
+
+.ds8-icon.small, .ds8-icon.-small {
+width: 18px;
+height: 18px;
+line-height: 18px;
+font-size: 14px;
+}
+
+.custom-fd-dates .ds8-row-handle .ds8-icon.-minus {
+top: 50%;
+}
+
+.custom-fd-dates .ds8-row-handle.remove {
+background: #F9F9F9;
+border-left-color: #DFDFDF;
+}
+.custom-fd-dates .ds8-row-handle, .custom-fd-dates .rowid {
+width: 16px;
+text-align: center !important;
+vertical-align: middle !important;
+position: relative;
+}
+.custom-fd-dates > tbody > tr > td {
+border-color: #EDEDED;
+border-width: 1px 0 0 1px;
+}
+
+.ds8-row input[type="text"] {
+  width: 100%;
+}
+.fddate {
+  width: 100px;
+}
