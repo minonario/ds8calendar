@@ -191,15 +191,8 @@ class DS8Calendar_Admin {
 	}
 
 	public static function load_menu() {
-		
-                //$hook = add_options_page( __('DS8 Calendar', 'ds8calendar'), __('DS8 Calendar', 'ds8calendar'), 'manage_options', 'ds8calendar-key-config', array( 'DS8Calendar_Admin', 'display_page' ) );
-          
           add_menu_page(__('DS8 Calendar', 'ds8calendar'), __('DS8 Calendar', 'ds8calendar'), 'manage_options', 'ds8calendar-key-config', array( 'DS8Calendar_Admin', 'display_page' ), null);
           add_submenu_page( 'edit.php?post_type=calendar', 'Calendar Import', 'Import', 'manage_options', 'import-calendar', array( 'DS8Calendar_Admin', 'ds8calendar_view' ));
-		
-		/*if ( $hook ) {
-			add_action( "load-$hook", array( 'DS8Calendar_Admin', 'admin_help' ) );
-		}*/
 	}
         
         // Hook into WordPress init; this function performs report generation when the admin form is submitted
@@ -272,15 +265,23 @@ class DS8Calendar_Admin {
                         
                         $post_exists = post_exists($country.' '.$year, '', '', '');
                         if ($post_exists == 0 ) {
+                          
+                          // Check category exists
+                          $term = term_exists($country,'calendar_cat');
+                          if ($term == null){
+                            $term = wp_insert_term($country, 'calendar_cat');
+                          }
+                          
                           $calendar_post = array(
                                       'post_title'    => wp_strip_all_tags( $country.' '.$year ),
-                                      'post_content'  => '', //$_POST['post_content'],
+                                      'post_content'  => '[ds8calendar year="'.$year.'"]',
                                       'post_status'   => 'publish',
                                       'post_type'     => 'calendar'
                                     );
 
                           // Insert the post into the database
                           $post_id = wp_insert_post( $calendar_post );
+                          $term_done = wp_set_post_terms( $post_id, $term['term_id'], 'calendar_cat' );
                           $json_res = json_encode($dates,JSON_UNESCAPED_UNICODE);
                           update_post_meta( $post_id, '_ds8_calendar_meta_value_key', $json_res );
                         }

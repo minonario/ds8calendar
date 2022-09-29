@@ -9,215 +9,326 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 
 #fdcalendarsx table.month {
-    background-color: transparent;
-    margin: 0 auto;
-    width: inherit;
-    font-family: 'Ubuntu', verdana, arial, sans-serif;
+  border-collapse: collapse;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  width: 100%;
+  font-family: 'Ubuntu', verdana, arial, sans-serif;
 }
-#fdcalendarsx table.month tbody, 
-#fdcalendarsx table.month tfoot, 
+#fdcalendarsx table.month tbody,
+#fdcalendarsx table.month tfoot,
 #fdcalendarsx table.month thead {
-    border: none;
+  border: none;
 }
 div.calyr h1,div.calyr h2,div.calmon h1,div.calmon h2 {
-    text-transform: none;
+  text-transform: none;
 }
 div.calyr {
-    float: left;
-    text-align: center;
-    font-size: 3vw;
+  float: left;
+  text-align: center;
+  font-size: 3vw;
 }
 div.calyr h1.title,div.calmon h1.title {
-    font-size: 6vw;
-    margin: 8vw 0 1vw 0;
+  font-size: 6vw;
+  margin: 8vw 0 1vw 0;
 }
 div.calyr h1.subtitle,div.calmon h1.subtitle {
-    font-size: 5.5vw;
-    margin: 1vw 0 1vw 0;
+  font-size: 5.5vw;
+  margin: 1vw 0 1vw 0;
 }
 div.calyr h2,div.calmon h2 {
-    font-size: 4.0vw;
+  font-size: 4.0vw;
 }
 div.calyr a {
-    text-decoration: none;
-    color: #14688b;
-    font-weight: normal;
-    font-size: 3.7vw;
+  text-decoration: none;
+  color: #14688b;
+  font-weight: normal;
+  font-size: 2.7vw;
 }
 div.calmain {
-    float: left;
-    margin: 6vw 0 6vw 0;
+  float: left;
+  margin: 6vw 0 6vw 0;
 }
 #fdcalendarsx table.month th {
-    text-align: center;
-    /*padding-bottom: 5px;*/
-    padding: 0 0 5px 0;
+  text-align: center;
+  /*padding-bottom: 5px;*/
+  padding: 0 0 0 0;
 }
 #fdcalendarsx table.month td {
-    color: #666666;
-    padding: 0.2vw 0.4vw 0.2vw 0.4vw;
-    white-space: nowrap;
+  color: #666666;
+  padding: 0.2vw 0.4vw 0.2vw 0.4vw;
+  white-space: nowrap;
+  border: none;
 }
 #fdcalendarsx table.month td {
-    text-align: right;
+  text-align: right;
 }
 #fdcalendarsx div.calyr td.wno {
-    font-style: italic;
-    font-weight: normal;
-    color: #b3b3b3;
-    font-size: 2.5vw;
-    padding-right: 1vw;
+  font-style: italic;
+  font-weight: normal;
+  color: #b3b3b3;
+  font-size: 2.5vw;
+  padding-right: 1vw;
 }
 #fdcalendarsx table.month td.redday {
-    color: #d42b2b;
+  color: #d42b2b;
 }
-#fdcalendarsx table.month td.boldd {
-    color: #353664;
-    font-weight: bold;
+#fdcalendarsx table.month td.boldd a {
+  color: #353664;
+  font-weight: bold;
+  cursor: cell;
 }
 #fdcalendarsx table.month td.bluday {
-    color: #353664;
+  color: #2f32ab;
 }
 div.calyrmo {
-    float: left;
-    /*display: flex;*/
-    flex-wrap: wrap;
-    text-align: right;
-    width: 50%;
-    margin-top: 2vw;
-    padding-left: 5vw;
+  float: left;
+  /*display: flex;*/
+  flex-wrap: wrap;
+  text-align: right;
+  width: 50%;
+  margin-top: 2vw;
+  padding-left: 0;
+  padding-right: 2vw;
 }
-div.calyrmo:nth-of-type(even) {
-    padding-left: 0;
-    padding-right: 5vw;
-}
-div.calyr table.month {
+table.dates-descriptions  {
+    width: 95%;
+    font-size: 3.2vw;
     margin-left: auto;
     margin-right: auto;
 }
+table.dates-descriptions tbody td.day.redday {
+  color: #353664;
+  font-weight: bold;
+  padding-right: 0.5vw;
+  vertical-align: top;
+  text-align: right;
+  white-space: nowrap;
+}
+table.dates-descriptions tbody td.month.redday {
+  color: #353664;
+  font-weight: bold;
+  text-align: left;
+  vertical-align: top;
+}
+table.dates-descriptions tbody td.desc {
+  text-align: left;
+}
+.ds8country_dp {
+  height: auto;
+  padding: 6px 10px;
+  float: left;
+}
+div.calyrmo:nth-of-type(even) {
+  padding-left: 0;
+  padding-right: 0;
+}
+div.calyr table.month {
+  margin-left: auto;
+  margin-right: auto;
+}
 div.calmon {
-    float: left;
-    text-align: center;
-    font-size: 3vw;
+  float: left;
+  text-align: center;
+  font-size: 3vw;
 }
 div.calmon p {
-    font-size: 3vw;
-    padding: 0;
-    margin: 0;
+  font-size: 3vw;
+  padding: 0;
+  margin: 0;
 }
 div.calmon {
-    width: 100%;
+  width: 100%;
 }
 table.calmon {
-    float: left;
-    width: 90%;
-     margin-left: 5%;
-    margin-top: 5vw;
-    margin-bottom: 8vw;
+  float: left;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5vw;
+  margin-bottom: 8vw;
 }
 table.calmon td {
-    border: 1px solid #a0a0a0;
-    padding: 2px;
+  border: 1px solid #a0a0a0;
+  padding: 2px;
 }
 table.calmon td.wkno {
-    width: 10%;
-    padding: 2px 10px 2px 10px;
-    font-weight: bold;
+  width: 10%;
+  padding: 2px 10px 2px 10px;
+  font-weight: bold;
 }
 table.calmon td.dayno {
-    width: 10%;
-    text-align: right;
-    padding: 2px 10px 2px 10px;
+  width: 10%;
+  text-align: right;
+  padding: 2px 10px 2px 10px;
 }
 table.calmon td.wday {
-    width: 20%;
-    text-align: left;
-    padding: 2px 10px 2px 10px;
+  width: 20%;
+  text-align: left;
+  padding: 2px 10px 2px 10px;
 }
 table.calmon td.descr {
-    text-align: left;
-    padding: 2px 10px 2px 10px;
-    font-style: italic;
+  text-align: left;
+  padding: 2px 10px 2px 10px;
+  font-style: italic;
 }
 div.calmon td.redday {
-    color: #d42b2b;
+  color: #d42b2b;
 }
 div.calmon td.bluday {
-    color: #14688b;
+  color: #14688b;
 }
 div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.descr {
-    background: #f0f0f0;
+  background: #f0f0f0;
 }
 @media (min-width: 590px) {
-    div.calyrmo,div.calyrmo:nth-of-type(even) {
-        width: 33.2%;
-        padding: 0;
-    }
-    div.calyrmo:nth-of-type(3n) {
-        /*padding-right: 4vw;*/
-    }
-    div.calyrmo:nth-of-type(3n+1) {
-        /*padding-left: 4vw;*/
-    }
-    div.calyr {
-        font-size: 1.8vw;
-    }
-    div.calyr a {
-        font-size: 2.2vw;
-    }
-    table.month td {
-        padding: 1px 2px 2px 2px;
-        padding: 0.1vw 0.2vw 0.1vw 0.2vw;
-    }
-    #fdcalendarsx div.calyr td.wno {
-        font-size: 1.5vw;
-    }
+  .ds8country_dp {
+    padding: 6px 20px;
+  }
+  div.calyrmo,div.calyrmo:nth-of-type(even) {
+    width: 33.2%;
+    padding: 0 0px 0px 20px
+  }
+  div.calyrmo:nth-of-type(3n) {
+    /*padding-right: 4vw;*/
+  }
+  div.calyrmo:nth-of-type(3n+1) {
+    /*padding-left: 4vw;*/
+  }
+  div.calyr {
+    font-size: 1.8vw;
+  }
+  div.calyr a {
+    font-size: 1.7vw;
+  }
+  table.month td {
+    padding: 1px 2px 2px 2px;
+    padding: 0.1vw 0.2vw 0.1vw 0.2vw;
+  }
+  #fdcalendarsx div.calyr td.wno {
+    font-size: 1.5vw;
+  }
 }
 @media (min-width: 926px) {
-    div.calmain {
-        float: left;
-        margin: 70px 0 70px 0;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    #fdcalendarsx div.calyr {
-        font-size: 16px;
-    }
-    div.calyr a {
-        font-size: 20px;
-    }
-    #fdcalendarsx table.month td {
-        padding: 2px 3px 3px 3px;
-    }
-    #fdcalendarsx div.calyr td.wno {
-        font-size: 12px;
-    }
-    div.calyr h1.title,div.calmon h1.title {
-        font-size: 50px;
-        margin: 70px 0 0 0;
-    }
-    div.calyr h1.subtitle,div.calmon h1.subtitle {
-        font-size: 40px;
-        margin: 10px 0 0 0;
-    }
-    div.calyr h2,div.calmon h2 {
-        font-size: 30px;
-        margin: 10px 0 0 0;
-    }
-    div.calyrmo {
-        margin-top: 10px;
-        padding: 0;
-    }
-    div.calyrmo:nth-of-type(3n+1) {
-        /*padding-left: 60px;*/
-    }
-     div.calyrmo:nth-of-type(3n) {
-        /*padding-right: 60px;*/
-    }
-    table.calmon {
-        width: 810px;
-        margin-left: 50px;
-        margin-top: 40px;
-        margin-bottom: 80px;
-    }
+  table.dates-descriptions {
+    font-size: 16px;
+  }
+  table.dates-descriptions tbody td.day.redday {
+    width: 60px;
+  }
+  table.dates-descriptions tbody td.month.redday {
+    width: 15%;
+  }
+  div.calmain {
+    float: left;
+    margin: 70px 0 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #fdcalendarsx div.calyr, #fdcalendarsx div.calyr a {
+    font-size: 16px;
+  }
+  div.calyrmo h4 {
+    color: #353664;
+    margin-top: 5px;
+  }
+  div.calyr a {
+    font-size: 16px;
+  }
+  #fdcalendarsx table.month td {
+    padding: 2px 3px 3px 3px;
+  }
+  #fdcalendarsx div.calyr td.wno {
+    font-size: 12px;
+  }
+  div.calyr h1.title,div.calmon h1.title {
+    font-size: 50px;
+    margin: 70px 0 0 0;
+  }
+  div.calyr h1.subtitle,div.calmon h1.subtitle {
+    font-size: 40px;
+    margin: 10px 0 0 0;
+  }
+  div.calyr h2,div.calmon h2 {
+    font-size: 30px;
+    margin: 10px 0 0 0;
+  }
+  div.calyrmo {
+    margin-top: 10px;
+    padding: 0 0 0 20px;
+  }
+  div.calyrmo:nth-of-type(3n+1) {
+    /*padding-left: 60px;*/
+  }
+  div.calyrmo:nth-of-type(3n) {
+    /*padding-right: 60px;*/
+  }
+  table.calmon {
+    width: 810px;
+    margin-left: 50px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+}
+
+.ds8pagination {
+  display: inline-block;
+  width: 100%;
+}
+.ds8pagination .prev {
+  float: right;
+}
+.ds8pagination .next {
+  float: right;
+  margin-left: 10px;
+}
+.fddays {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.fddays h2 {
+  font-size: 22px;
+  background-color: #353664;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding: 4px 0px;
+  text-align: center;
+}
+.fddays p {
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+
+.fddays p span {
+  color: #353664;
+  font-weight: bold;
+}
+
+.prev a, .next a {
+  padding: 5px 20px;
+  display: inline-block;
+  color: #FFFFFF!important;
+  background-color: #353664;
+  border-radius: 5px;
+}
+.prev a:hover, .next a:hover {
+  background-color: #4343d6;
+}
+table.month tbody tr th {
+  background-color: #353664;
+}
+table.month tbody tr th h4{
+  color: #fff;
+}
+div.calyrmo h4 {
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+#fdcalendarsx table.month td.wdt {
+  font-weight: bold;
+}
+.fdtooltip, #fdcalendarsx div.calyr a.fddate {
+  text-decoration: underline;
 }

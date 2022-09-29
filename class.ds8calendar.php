@@ -23,7 +23,24 @@ class DS8Calendar {
                 
                 add_action('wp_enqueue_scripts', array('DS8Calendar', 'ds8_calendar_javascript'), 10);
                 add_shortcode( 'ds8calendar', array('DS8Calendar', 'ds8calendar_shortcode_fn') );
+                add_filter( "next_post_link", array('DS8Calendar','calendar_link'), 10, 5 );
+                add_filter( "previous_post_link", array('DS8Calendar','calendar_link'), 10, 5 );
 	}
+        
+        public static function calendar_link($output, $format, $link, $post, $rel){
+          if ( ! $post ) {
+              $output = '';
+          } else {
+              
+              if ($post->post_type === 'calendar') {
+                preg_match_all('/\b\d{4}\b/ui', $post->post_title, $matches);
+                $string = '<a href="' . get_permalink( $post ) . '" rel="' . $rel . '">';
+                $inlink = str_replace( '%link', $matches[0][0], $format );
+                $output = $string . $inlink . '</a>';
+              }
+          }
+          return $output;
+        }
         
         public static function ds8calendar_shortcode_fn( $atts ) {
           
@@ -38,8 +55,7 @@ class DS8Calendar {
             ), $atts, 'fdcalendarios' );
 
             $calendar = new FDCalendar($combined);
-
-            return  $calendar->show($atts['year']);
+            return  $calendar->show($atts['year'], $post_id);
         }
         
         /**
@@ -53,7 +69,11 @@ class DS8Calendar {
 
         public static function ds8_calendar_javascript(){
           
+            wp_enqueue_style( 'jquery-ui-smoothness', // wrapped for brevity
+                        '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css', [], null );
             wp_enqueue_style('ds8calendar-css', plugin_dir_url( __FILE__ ) . '_inc/front-calendar.css', array(), DS8CALENDAR_VERSION);
+            wp_register_script( 'front-ds8calendar.js', plugin_dir_url( __FILE__ ) . '_inc/front-calendar.js', array('jquery','jquery-ui-tooltip'), DS8CALENDAR_VERSION );
+            wp_enqueue_script( 'front-ds8calendar.js' );
         }
 
         public static function view( $name, array $args = array() ) {
