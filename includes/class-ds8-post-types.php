@@ -62,6 +62,8 @@ class DS8_Post_types {
                                     'description'         => __( 'This is where you can add new Calendars.', 'ds8calendar' ),
                                     'public'              => true,
                                     'show_ui'             => true,
+                                    'show_in_menu'        => true,
+                                    'show_in_nav_menus'   => true,
                                     'capability_type'     => 'post',
                                     'map_meta_cap'        => true,
                                     'publicly_queryable'  => true,
