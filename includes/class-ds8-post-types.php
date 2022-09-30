@@ -46,7 +46,7 @@ class DS8_Post_types {
                                     'labels'  => array(
                                                     'name'               => __( 'Calendars', 'ds8calendar' ),
                                                     'singular_name'      => __( 'Calendar', 'ds8calendar' ),
-                                                    'menu_name'          => _x( 'Calendar', 'Admin menu name', 'ds8calendar' ),
+                                                    'menu_name'          => _x( 'Calendars', 'Admin menu name', 'ds8calendar' ),
                                                     'add_new'            => __( 'Add new', 'ds8calendar' ),
                                                     'add_new_item'       => __( 'Add new Calendar', 'ds8calendar' ),
                                                     'edit'               => __( 'Edit', 'ds8calendar' ),

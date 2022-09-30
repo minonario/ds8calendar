@@ -67,19 +67,20 @@ class DS8Calendar_Admin {
                   <thead>
                     <tr>
                       <td>
-                        <label><?php __( 'Row', 'ds8calendar' ) ?></label>
+                        <label><?php _e( 'Row', 'ds8calendar' ) ?></label>
                       </td>
                       <td>
-                        <label><?php __( 'Date', 'ds8calendar' ) ?></label>
+                        <label><?php _e( 'Date', 'ds8calendar' ) ?></label>
                       </td>
                       <td>
-                        <label><?php __( 'Description', 'ds8calendar' ) ?></label>
+                        <label><?php _e( 'Description', 'ds8calendar' ) ?></label>
                       </td>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
                     $count = 1;
+                    if ($combined) {
                     foreach ($combined as $date => $description){
                       ?>
                     <tr class='ds8-row' data-id="<?php echo $count; ?>">
@@ -95,6 +96,7 @@ class DS8Calendar_Admin {
                     
                     <?php
                       $count++;
+                    }
                     }
                     ?>
                   </tbody>

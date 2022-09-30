@@ -20,8 +20,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgctxt "Admin menu name"
-msgid "Calendar"
-msgstr "Calendario"
+msgid "Calendars"
+msgstr "Calendarios"
 
 msgctxt "Admin menu name"
 msgid "Categories"
