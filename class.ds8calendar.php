@@ -6,6 +6,7 @@ class DS8Calendar {
 
 	public static function init() {
 		if ( ! self::$initiated ) {
+                        add_filter( 'load_textdomain_mofile', array('DS8Calendar','ds8calendar_textdomain'), 10, 2 );
 			self::init_hooks();
 		}
 	}
@@ -15,6 +16,7 @@ class DS8Calendar {
 	 */
 	private static function init_hooks() {
 		self::$initiated = true;
+                self::set_locale();
                 
                 include_once( 'includes/class-ds8-post-types.php' );
                 DS8_Post_types::register_post_types();
@@ -26,6 +28,24 @@ class DS8Calendar {
                 add_filter( "next_post_link", array('DS8Calendar','calendar_link'), 10, 5 );
                 add_filter( "previous_post_link", array('DS8Calendar','calendar_link'), 10, 5 );
 	}
+        
+        /**
+	 * Define the locale for this plugin for internationalization.
+	 *
+	 * @since    1.0
+	 */
+	private static function set_locale() {
+		load_plugin_textdomain( 'ds8calendar', false, plugin_dir_path( dirname( __FILE__ ) ) . '/languages/' );
+
+	}
+        
+        public static function ds8calendar_textdomain( $mofile, $domain ) {
+                if ( 'ds8calendar' === $domain && false !== strpos( $mofile, WP_LANG_DIR . '/plugins/' ) ) {
+                        $locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
+                        $mofile = WP_PLUGIN_DIR . '/' . dirname( plugin_basename( __FILE__ ) ) . '/languages/' . $domain . '-' . $locale . '.mo';
+                }
+                return $mofile;
+        }
         
         public static function calendar_link($output, $format, $link, $post, $rel){
           if ( ! $post ) {

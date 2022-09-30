@@ -1,0 +1,138 @@
+# This file is distributed under the GNU General Public License v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: DS8 Calendar Pot v1.0.0\n"
+"Report-Msgid-Bugs-To: Jose <translations@example.com>\n"
+"POT-Creation-Date: 2022-09-30 06:50+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Deseisaocho <joseluis@deseisaocho.com>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgctxt "Admin menu name"
+msgid "Calendar"
+msgstr "Calendario"
+
+msgctxt "Admin menu name"
+msgid "Categories"
+msgstr "Categorías"
+
+msgctxt "slug"
+msgid "calendar-category"
+msgstr "calendario-categoria"
+
+msgctxt "slug"
+msgid "calendar"
+msgstr "calendario"
+
+msgid "Date in the Calendar"
+msgstr "Fecha en el calendario"
+
+msgid "Row"
+msgstr "Fila"
+
+msgid "Date"
+msgstr "Fecha"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "DS8 Calendar"
+msgstr "Calendario DS8"
+
+msgid "Import Calendar (CSV Format)"
+msgstr "Importar calendario (formato CSV)"
+
+msgid "Load new Calendar"
+msgstr "Cargar el nuevo calendario"
+
+msgid "Upload"
+msgstr "Cargar"
+
+msgid "Calendar Import"
+msgstr "Importar calendario"
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "Calendars"
+msgstr "Calendarios"
+
+msgid "Calendar"
+msgstr "Calendario"
+
+msgid "Add new"
+msgstr "Adicionar nuevo"
+
+msgid "Add new Calendar"
+msgstr "Agregar nuevo calendario"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Edit Calendar"
+msgstr "Editar calendario"
+
+msgid "New Calendar"
+msgstr "Nuevo calendario"
+
+msgid "View"
+msgstr "Ver"
+
+msgid "View Calendar"
+msgstr "Ver calendario"
+
+msgid "Search Calendar"
+msgstr "Buscar calendario"
+
+msgid "Not found Calendar"
+msgstr "Calendario no encontrado"
+
+msgid "Not found Calendar in trash"
+msgstr "Calendario no encontrado en la papelera"
+
+msgid "Parent Calendar"
+msgstr "Calendario padre"
+
+msgid "This is where you can add new Calendars"
+msgstr ""
+
+msgid "Calendar Categories"
+msgstr "Categorías calendario"
+
+msgid "Calendar Category"
+msgstr "Categoría calendario"
+
+msgid "Categories"
+msgstr "Categorías"
+
+msgid "Search Calendar Category"
+msgstr "Buscar categoría de calendario"
+
+msgid "All Categories"
+msgstr "Todas las categorías"
+
+msgid "Parent Calendar Category"
+msgstr "Categoría de calendario principal"
+
+msgid "Edit Category"
+msgstr "Editar la categoría"
+
+msgid "Update Category"
+msgstr "Actualizar categoría"
+
+msgid "Add new Calendar Category"
+msgstr "Añadir una nueva categoría calendario"
+
+msgid "New Calendar Category"
+msgstr "Nueva categoría de calendario"

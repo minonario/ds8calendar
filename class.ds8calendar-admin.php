@@ -67,13 +67,13 @@ class DS8Calendar_Admin {
                   <thead>
                     <tr>
                       <td>
-                        <label>Row</label>
+                        <label><?php __( 'Row', 'ds8calendar' ) ?></label>
                       </td>
                       <td>
-                        <label>Date</label>
+                        <label><?php __( 'Date', 'ds8calendar' ) ?></label>
                       </td>
                       <td>
-                        <label>Description</label>
+                        <label><?php __( 'Description', 'ds8calendar' ) ?></label>
                       </td>
                     </tr>
                   </thead>
@@ -192,7 +192,7 @@ class DS8Calendar_Admin {
 
 	public static function load_menu() {
           add_menu_page(__('DS8 Calendar', 'ds8calendar'), __('DS8 Calendar', 'ds8calendar'), 'manage_options', 'ds8calendar-key-config', array( 'DS8Calendar_Admin', 'display_page' ), null);
-          add_submenu_page( 'edit.php?post_type=calendar', 'Calendar Import', 'Import', 'manage_options', 'import-calendar', array( 'DS8Calendar_Admin', 'ds8calendar_view' ));
+          add_submenu_page( 'edit.php?post_type=calendar', __('Calendar Import', 'ds8calendar'), __('Import', 'ds8calendar'), 'manage_options', 'import-calendar', array( 'DS8Calendar_Admin', 'ds8calendar_view' ));
 	}
         
         // Hook into WordPress init; this function performs report generation when the admin form is submitted
@@ -300,7 +300,7 @@ class DS8Calendar_Admin {
         
             ?>
             <div class="wrap">
-                <h1>Import Calendar (CSV Format)</h1>
+                <h1><?php _e('Import Calendar (CSV Format)', 'ds8calendar'); ?></h1>
 
                 <?php
                 $url = add_query_arg(array(
@@ -319,12 +319,12 @@ class DS8Calendar_Admin {
 
                     <table>
                             <tr>
-                                    <td>Load new Calendar...</td>
+                                    <td><?php _e('Load new Calendar', 'ds8calendar'); ?></td>
                                     <td><input type='file' name='file' onchange="ValidateSingleInput(this)"></td>
                             </tr>
                             <tr>
                                     <td>&nbsp;</td>
-                                    <td><?php submit_button('Upload', '', 'uploadds8', false); ?></td>
+                                    <td><?php submit_button(__('Upload', 'ds8calendar'), '', 'uploadds8', false); ?></td>
                             </tr>
                     </table>
 
