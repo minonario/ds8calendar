@@ -8,25 +8,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 */
 
 #fdcalendarsx {
-    -js-display: flex;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-negative: 1;
-    flex-shrink: 1;
-    -ms-flex-preferred-size: auto;
-    flex-basis: auto;
-    word-break: break-word;
+  -js-display: flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  word-break: break-word;
 }
 
 #fdcalendarsx table.month {
   border-collapse: collapse;
   background-color: transparent;
   border: none;
-  margin: 0 20px auto 10px;
+  margin: 0 auto;
   width: 100%;
   font-family: 'Ubuntu', verdana, arial, sans-serif;
 }
@@ -34,7 +34,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
   border: none;
 }
 table.month tbody tr:nth-child(2) {
-    background-color: #ebebeb;
+  background-color: #ebebeb;
 }
 #fdcalendarsx table.month tbody,
 #fdcalendarsx table.month tfoot,
@@ -103,19 +103,15 @@ div.calmain {
 }
 div.calyrmo {
   float: left;
-  display: flex;
-  flex-wrap: wrap;
   text-align: right;
-  width: 50%;
+  width: 49%;
   margin-top: 2vw;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 2%;
 }
 table.dates-descriptions  {
-    width: 95%;
-    font-size: 3.2vw;
-    margin-left: auto;
-    margin-right: auto;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 table.dates-descriptions tbody td.day.redday {
   color: #353664;
@@ -140,8 +136,12 @@ table.dates-descriptions tbody td.desc {
   float: left;
 }
 div.calyrmo:nth-of-type(even) {
-  padding-left: 0;
+  padding-left: 2%;
   padding-right: 0;
+}
+div.calyrmo:nth-of-type(odd) {
+    padding-left: 0;
+    padding-right: 0;
 }
 div.calyr table.month {
   margin-left: auto;
@@ -202,20 +202,23 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
 }
 @media (min-width: 590px) {
   #fdcalendarsx table.month {
-    margin: 0 auto auto 20px;
+    margin: 0;
   }
   .ds8country_dp {
     padding: 6px 20px;
   }
   div.calyrmo,div.calyrmo:nth-of-type(even) {
-    width: 33.2%;
-    padding: 0 0px 0px 0px
+    width: 31.2%;
+    padding: 0 0px 0px 2%;
+  }
+  div.calyrmo:nth-of-type(odd) {
+    padding-left: 2%;
   }
   div.calyrmo:nth-of-type(3n) {
     /*padding-right: 4vw;*/
   }
   div.calyrmo:nth-of-type(3n+1) {
-    /*padding-left: 4vw;*/
+    padding-left: 2%; /*4vw*/
   }
   div.calyr {
     font-size: 1.8vw;
@@ -233,7 +236,7 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
 }
 @media (min-width: 926px) {
   #fdcalendarsx table.month {
-    margin: 0 auto auto 20px;
+    margin: 0;
   }
   table.dates-descriptions {
     font-size: 16px;
@@ -280,7 +283,7 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
   }
   div.calyrmo {
     margin-top: 10px;
-    padding: 0
+    padding: 0 0 0 2%;
   }
   div.calyrmo:nth-of-type(3n+1) {
     /*padding-left: 60px;*/
@@ -346,10 +349,11 @@ table.month tbody tr th {
 }
 table.month tbody tr th h4{
   color: #fff;
+  text-transform: capitalize;
 }
 div.calyrmo h4 {
-  margin-top: 0;
-  margin-bottom: 2px;
+  margin-top: 5px;
+  margin-bottom: 4px;
 }
 #fdcalendarsx table.month td.wdt {
   font-weight: bold;
