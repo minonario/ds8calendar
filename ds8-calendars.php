@@ -30,12 +30,13 @@ class FDCalendar {
         $args = array(  
             'post_type' => 'calendar',
             'post_status' => 'publish',
+            'posts_per_page' => -1,
             'calendar_cat' => 'actual',
             'orderby' => 'title',
             'order' => 'ASC'
         );
 
-        $categories = wp_get_post_terms($post_id, 'calendar_cat', array('fields' => 'names'));
+        $categories = wp_get_post_terms($post_id, 'calendar_cat', array('fields' => 'names', 'number' => 'all'));
 
         $loopx = new WP_Query( $args ); 
         if ( $loopx->have_posts() ) {

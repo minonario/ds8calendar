@@ -4,11 +4,11 @@
 // There are "undefined" variables here because they're defined in the code that includes this file as a template.
 
 ?>
-<div id="fdestadisticas-plugin-container">
+<div id="ds8calendars-plugin-container">
 
-	<div class="fdestadisticas-lower">
+	<div class="ds8calendars-lower">
 
-		<div class="fdestadisticas-boxes">
+		<div class="ds8calendars-boxes">
                   
                   <div class="wrap">
 
@@ -19,11 +19,8 @@
                     <?php do_settings_sections('ds8-settings-page') ?>
 
                         <table class="form-table">
-                        <?php FDEstadisticas_Admin::create_form($options); ?>
-                          <tr valign="top">
-                            <th scope="row">Ruta tablas</th>
-                            <td> <?php  echo FDESTADISTICAS__PLUGIN_DIR . '_tablas/TablasSaif/' ?></td>
-                          </tr>
+                        <?php DS8Calendar_Admin::create_form($options); ?>
+                          
                         </table>
 
                         <p class="submit">

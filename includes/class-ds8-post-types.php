@@ -74,9 +74,7 @@ class DS8_Post_types {
                                     'rewrite'             => $calendar_permalink ? array( 'slug' => untrailingslashit( $calendar_permalink ), 'with_front' => false, 'feeds' => false ) : false,
                                     'query_var'           => true,
                                     'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'page-attributes', 'author' ),
-                                    'has_archive'         => false,
-                                    'show_in_nav_menus'   => true,
-                                    'show_in_menu'        => true
+                                    'has_archive'         => false
 				)
 			)
 		);

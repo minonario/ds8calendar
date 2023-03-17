@@ -193,8 +193,8 @@ class DS8Calendar_Admin {
 	}
 
 	public static function load_menu() {
-          add_menu_page(__('DS8 Calendar', 'ds8calendar'), __('DS8 Calendar', 'ds8calendar'), 'manage_options', 'ds8calendar-key-config', array( 'DS8Calendar_Admin', 'display_page' ), null);
-          add_submenu_page( 'edit.php?post_type=calendar', __('Calendar Import', 'ds8calendar'), __('Import', 'ds8calendar'), 'manage_options', 'import-calendar', array( 'DS8Calendar_Admin', 'ds8calendar_view' ));
+          add_menu_page(__('DS8 Calendar', 'ds8calendar'), __('DS8 Calendar', 'ds8calendar'), 'editor', 'ds8calendar-key-config', array( 'DS8Calendar_Admin', 'display_page' ), null);
+          add_submenu_page( 'edit.php?post_type=calendar', __('Calendar Import', 'ds8calendar'), __('Import', 'ds8calendar'), 'editor', 'import-calendar', array( 'DS8Calendar_Admin', 'ds8calendar_view' ));
 	}
         
         // Hook into WordPress init; this function performs report generation when the admin form is submitted
@@ -207,7 +207,7 @@ class DS8Calendar_Admin {
                     require_once( ABSPATH . 'wp-admin/includes/file.php' );
                 }
                 //admin.php when is options
-                if ($pagenow == 'edit.php' && !empty($_POST['uploadds8']) && $_POST['uploadds8'] === "Upload") {
+                if ($pagenow == 'edit.php' && !empty($_POST['uploadds8']) && ($_POST['uploadds8'] === "Upload" || $_POST['uploadds8'] === "Cargar") ) {
                     // Upload file
                     if(isset($_POST['uploadds8'])){
                         if($_FILES['file']['name'] != ''){
@@ -248,7 +248,7 @@ class DS8Calendar_Admin {
                           echo 'Existente '.$line[0].' '.$parsed['year'] . ' ID='.$post_exists."<br />\n";
                         }else{
                           //NEW DATES
-                          if (isset($combined[$line[0]])){
+                          if (isset($combined[$line[0]][$parsed['year']])){
                              $combined[$line[0]][$parsed['year']] += array(trim($line[1]) => trim($line[2]) );
                           }else{
                             $combined[$line[0]][$parsed['year']] = array( trim($line[1]) => trim($line[2]) );
