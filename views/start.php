@@ -2,14 +2,14 @@
 
 //phpcs:disable VariableAnalysis
 // There are "undefined" variables here because they're defined in the code that includes this file as a template.
-
+//
 ?>
 <div id="ds8calendars-plugin-container">
 
 	<div class="ds8calendars-lower">
 
 		<div class="ds8calendars-boxes">
-                  
+                   
                   <div class="wrap">
 
                     <h2><?php _e('Finanzas Digital - Tablas (Shortcode)') ?></h2>

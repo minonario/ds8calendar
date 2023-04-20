@@ -208,7 +208,7 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
     padding: 6px 20px;
   }
   div.calyrmo,div.calyrmo:nth-of-type(even) {
-    width: 31.2%;
+    width: 32.2%;
     padding: 0 0px 0px 2%;
   }
   div.calyrmo:nth-of-type(odd) {
@@ -302,6 +302,7 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
 .ds8pagination {
   display: inline-block;
   width: 100%;
+  padding: 0 3% 0 2%
 }
 .ds8pagination .prev {
   float: right;
@@ -314,6 +315,7 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
   display: inline-block;
   position: relative;
   width: 100%;
+  padding: 0 3% 0 2%
 }
 .fddays h2 {
   font-size: 22px;
