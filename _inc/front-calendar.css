@@ -120,15 +120,20 @@ table.dates-descriptions tbody td.day.redday {
   vertical-align: top;
   text-align: right;
   white-space: nowrap;
+  font-size: 1rem;
 }
 table.dates-descriptions tbody td.month.redday {
   color: #353664;
   font-weight: bold;
   text-align: left;
   vertical-align: top;
+  font-size: 1rem;
+  white-space: nowrap;
+  padding: 10px 0px 10px 10px;
 }
 table.dates-descriptions tbody td.desc {
   text-align: left;
+  font-size: 1rem
 }
 .ds8country_dp {
   height: auto;
@@ -142,6 +147,7 @@ div.calyrmo:nth-of-type(even) {
 div.calyrmo:nth-of-type(odd) {
     padding-left: 0;
     padding-right: 0;
+    clear: both
 }
 div.calyr table.month {
   margin-left: auto;
@@ -380,8 +386,12 @@ cursor: pointer;
 vertical-align: middle;
 }
 
+select.filtercat, select.fdtable-ajax, select.ds8country_dp {
+  max-width: 10rem;
+}
+
 @media screen and (min-width: 375px) {
     select.filtercat, select.fdtable-ajax, select.ds8country_dp {
-      max-width: 25rem;
+      max-width: 12rem;
     }
 }

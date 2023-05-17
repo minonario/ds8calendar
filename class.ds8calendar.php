@@ -88,12 +88,14 @@ class DS8Calendar {
 	}
 
         public static function ds8_calendar_javascript(){
-          
-            wp_enqueue_style( 'jquery-ui-smoothness', // wrapped for brevity
-                        '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css', [], null );
-            wp_enqueue_style('ds8calendar-css', plugin_dir_url( __FILE__ ) . '_inc/front-calendar.css', array(), DS8CALENDAR_VERSION);
-            wp_register_script( 'front-ds8calendar.js', plugin_dir_url( __FILE__ ) . '_inc/front-calendar.js', array('jquery','jquery-ui-tooltip'), DS8CALENDAR_VERSION, true );
-            wp_enqueue_script( 'front-ds8calendar.js' );
+
+            if ( 'calendar' == get_post_type() ){
+              wp_enqueue_style( 'jquery-ui-smoothness',
+                          '//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css', [], null );
+              wp_enqueue_style('ds8calendar-css', plugin_dir_url( __FILE__ ) . '_inc/front-calendar.css', array(), DS8CALENDAR_VERSION);
+              wp_register_script( 'front-ds8calendar.js', plugin_dir_url( __FILE__ ) . '_inc/front-calendar.js', array('jquery','jquery-ui-tooltip'), DS8CALENDAR_VERSION, true );
+              wp_enqueue_script( 'front-ds8calendar.js' );
+            }
         }
 
         public static function view( $name, array $args = array() ) {
