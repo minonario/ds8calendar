@@ -193,8 +193,8 @@ class DS8Calendar_Admin {
 	}
 
 	public static function load_menu() {
-          add_menu_page(__('DS8 Calendar', 'ds8calendar'), __('DS8 Calendar', 'ds8calendar'), 'editor', 'ds8calendar-key-config', array( 'DS8Calendar_Admin', 'display_page' ), null);
-          add_submenu_page( 'edit.php?post_type=calendar', __('Calendar Import', 'ds8calendar'), __('Import', 'ds8calendar'), 'editor', 'import-calendar', array( 'DS8Calendar_Admin', 'ds8calendar_view' ));
+          add_menu_page(__('DS8 Calendar', 'ds8calendar'), __('DS8 Calendar', 'ds8calendar'), 'publish_pages', 'ds8calendar-key-config', array( 'DS8Calendar_Admin', 'display_page' ), null);
+          add_submenu_page( 'edit.php?post_type=calendar', __('Calendar Import', 'ds8calendar'), __('Import', 'ds8calendar'), 'publish_pages', 'import-calendar', array( 'DS8Calendar_Admin', 'ds8calendar_view' ));
 	}
         
         // Hook into WordPress init; this function performs report generation when the admin form is submitted
@@ -232,9 +232,9 @@ class DS8Calendar_Admin {
                 $row = 1;
                 $combined = array();
                 if (($handle = fopen($uploaded['file'], "r")) !== FALSE) {
-                    while (($data = fgetcsv($handle,null, ";")) !== FALSE) {
+                    while (($data = fgetcsv($handle,null)) !== FALSE) {
                         $num = count($data);
-                        $line = array_filter(explode(",", $data[0]));
+                        $line = array_filter(explode(";", $data[0]));
                         $parsed = date_parse_from_format("j/n/Y", $line[1]);
                         
                         //get_page_by_path
