@@ -243,6 +243,7 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
     font-size: 1.5vw;
   }
 }
+
 @media (min-width: 926px) {
   #fdcalendarsx table.month {
     margin: 0;
@@ -263,7 +264,7 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
     flex-wrap: wrap;
   }
   div.calyrmo,div.calyrmo:nth-of-type(even) {
-    width: 33.3%;
+    width: 50%;
     padding: 0 0px 0px 2%;
   }
   #fdcalendarsx div.calyr, #fdcalendarsx div.calyr a {
@@ -277,7 +278,7 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
     font-size: 16px;
   }
   #fdcalendarsx table.month td {
-    padding: 7px;
+    padding: 5px;
   }
   #fdcalendarsx div.calyr td.wno {
     font-size: 12px;
@@ -309,6 +310,15 @@ div.calmon tr.wend td.dayno,div.calmon tr.wend td.wday,div.calmon tr.wend td.des
     margin-left: 50px;
     margin-top: 40px;
     margin-bottom: 80px;
+  }
+}
+
+@media (min-width: 1180px) {
+  #fdcalendarsx table.month td{
+
+  }
+  div.calyrmo, div.calyrmo:nth-of-type(even) {
+    width: 33.3%;
   }
 }
 
